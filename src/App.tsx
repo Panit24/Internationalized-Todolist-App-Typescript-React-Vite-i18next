@@ -43,8 +43,8 @@ const App: React.FC = () => {
       <button style={{ marginLeft: "10px" }} onClick={addTask}>{t('add')}</button>
 
       <ul style={{ marginTop: '10px', marginLeft: "5px" }}>
-        {todos.map((todo:string, i:number) => (
-          <li key={i}>
+        {(todos || []).map((todo:string, i:number) => (
+          <li key={i} style={{ margin: '7px' } }>
             {todo}
             <button onClick={() => deleteTask(i)} style={{ marginLeft: '10px' }}>
               {t('delete')}
